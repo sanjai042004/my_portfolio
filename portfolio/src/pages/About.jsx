@@ -8,7 +8,6 @@ export const About = () => {
     >
       <div className="max-w-4xl w-full">
 
-        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
