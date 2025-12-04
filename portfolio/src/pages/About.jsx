@@ -18,7 +18,6 @@ export const About = () => {
           About <span className="text-blue-400">Me</span>
         </motion.h2>
 
-        {/* Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
