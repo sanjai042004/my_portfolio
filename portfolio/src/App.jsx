@@ -5,6 +5,7 @@ import { Skills } from "./pages/Skills";
 import { Contact } from "./pages/Contact";
 import { Projects } from "./pages/Project";
 import { Footer } from "./pages/Footer";
+import { BackToTop } from "./components/BackToTop";
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
       <Projects />
       <Contact />
       <Footer />
+      <BackToTop />
     </>
   );
 };
