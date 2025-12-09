@@ -10,7 +10,15 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors({ origin: "https://sanjai4-portfolio.vercel.app" }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://sanjai4-portfolio.vercel.app"],
+    credentials: true,
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json());
 
 // MongoDB Connection
@@ -32,6 +40,11 @@ const connectDB = async () => {
 
 // Routes
 app.use("/api/contact", contactRoute);
+
+app.get("/", (req, res) => {
+  res.send("Portfolio backend is running 🟢");
+});
+
 
 // Start Server
 connectDB().then(() => {
