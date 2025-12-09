@@ -1,8 +1,35 @@
 import { motion } from "framer-motion";
 import { Mail, User, MessageSquare } from "lucide-react";
 import contactImg from "../assets/contact.png";
+import { useState } from "react";
+import axios from "axios";
 
 export const Contact = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/contact/send",
+        form
+      );
+      alert("Message sent successfully");
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      alert("Failed to sent message");
+      console.log(error);
+    }
+  };
   return (
     <section
       id="contact"
@@ -36,7 +63,7 @@ export const Contact = () => {
             Get in Touch
           </h2>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
               <label className="text-gray-300 flex items-center gap-2 mb-2">
@@ -44,6 +71,9 @@ export const Contact = () => {
               </label>
               <input
                 type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-white/10 text-white outline-none
                 focus:border-blue-500 transition"
                 placeholder="Enter your name"
@@ -58,6 +88,9 @@ export const Contact = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-white/10 text-white outline-none
                 focus:border-blue-500 transition"
                 placeholder="Enter your email"
@@ -71,6 +104,9 @@ export const Contact = () => {
                 <MessageSquare size={18} /> Message
               </label>
               <textarea
+                value={form.message}
+                name="message"
+                onChange={handleChange}
                 rows="4"
                 className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-white/10 text-white outline-none
                 focus:border-blue-500 transition"
@@ -83,7 +119,7 @@ export const Contact = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition shadow-[0_0_20px_rgba(30,64,175,0.4)] font-medium"
+              className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition shadow-[0_0_20px_rgba(30,64,175,0.4)] font-medium cursor-pointer"
             >
               Send Message
             </motion.button>
