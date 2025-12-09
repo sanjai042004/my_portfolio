@@ -20,7 +20,7 @@ export const Contact = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contact/send",
+        "https://my-portfolio-2mlt.onrender.com/api/contact/send",
         form
       );
       alert("Message sent successfully");

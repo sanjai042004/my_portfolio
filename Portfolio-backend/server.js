@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({ origin: "https://sanjai4-portfolio.vercel.app" }));
 app.use(express.json());
 
 // MongoDB Connection
@@ -22,6 +22,7 @@ const connectDB = async () => {
       maxPoolSize: 20,
     });
 
+    
     console.log("✅ Connected to MongoDB with pooling");
   } catch (error) {
     console.error("❌ MongoDB connection failed:", error.message);
