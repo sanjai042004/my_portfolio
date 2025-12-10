@@ -1,12 +1,11 @@
+require("dotenv").config()
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const contactRoute = require("./src/routes/ContactRoute");
 
 const Port = 5000;
 
-dotenv.config();
 const app = express();
 
 // Middlewares
