@@ -81,7 +81,6 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Email */}
             <div>
               <label className="text-gray-300 flex items-center gap-2 mb-2">
                 <Mail size={18} /> Email
