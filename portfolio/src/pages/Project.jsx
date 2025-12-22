@@ -4,6 +4,7 @@ import ecommerce from "../assets/ecommerce.webp";
 import todo from "../assets/todo.webp";
 import talksy from "../assets/talksy.webp";
 import blog from "../assets/blog.webp";
+import weather from "../assets/weather.webp";
 export const Projects = () => {
   const projectData = [
     {
@@ -31,6 +32,14 @@ export const Projects = () => {
       img: talksy,
       github: "https://github.com/sanjai042004/Talksy",
       live: "#",
+    },
+    {
+      title: "Weather Website",
+      description:
+        "A React-based Weather App that displays real-time weather data using the OpenWeatherMap API with city search and unit conversion support.(Live)",
+      img: weather,
+      github: "https://github.com/sanjai042004/weather",
+      live: "https://weather-web-a.vercel.app/",
     },
 
     {
