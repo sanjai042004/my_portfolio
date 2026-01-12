@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import ecommerce from "../assets/ecommerce.webp";
-import todo from "../assets/todo.webp";
+import planit from "../assets/planit.webp";
 import talksy from "../assets/talksy.webp";
 import blog from "../assets/blog.webp";
 import weather from "../assets/weather.webp";
@@ -20,7 +20,7 @@ export const Projects = () => {
       title: "planIt Web (Live)",
       description:
         "Task Manager Web App – A MERN stack application with Firebase Google authentication for managing user-specific tasks with full CRUD functionality.",
-      img: todo,
+      img: planit,
       github: "https://github.com/sanjai042004/plantitt",
       live: "https://plansit.vercel.app/",
     },
