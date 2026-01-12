@@ -17,12 +17,12 @@ export const Projects = () => {
     },
 
     {
-      title: "Todo List App (Live)",
+      title: "planIt Web (Live)",
       description:
-        "A simple, fast and smooth Todo List application with local storage and animations. Fully responsive and easy to use.",
+        "Task Manager Web App – A MERN stack application with Firebase Google authentication for managing user-specific tasks with full CRUD functionality.",
       img: todo,
-      github: "https://github.com/sanjai042004/Todo-List",
-      live: "https://to-do-b4253.web.app/",
+      github: "https://github.com/sanjai042004/plantitt",
+      live: "https://plansit.vercel.app/",
     },
 
     {
